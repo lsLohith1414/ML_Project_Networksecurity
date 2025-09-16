@@ -18,8 +18,8 @@ ca = certifi.where()
 print("CA certificate loaded:", ca)
 
 # CustomException (You can define it elsewhere in your project)
-from networksecurity.exception.exception import CustomException
-from networksecurity.logging.logger import logging
+from src.exception.exception import CustomException
+from src.logging.logger import logging
 
 
 class NetworkDataExtract:
