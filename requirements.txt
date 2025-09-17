@@ -14,5 +14,7 @@ python-multipart
 scipy
 dill 
 pyaml
+fastapi
+uvicorn
 
 ##-e .

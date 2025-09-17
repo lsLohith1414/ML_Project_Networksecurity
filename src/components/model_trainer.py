@@ -23,6 +23,10 @@ from sklearn.model_selection import GridSearchCV
 import mlflow
 
 
+import dagshub
+dagshub.init(repo_owner='lsLohith1414', repo_name='ML_Project_Networksecurity', mlflow=True)
+
+
 def evaluate_models(X_train, y_train, X_test, y_test, models, params):
     """
     Run GridSearchCV for each model, train with best parameters, 
@@ -178,6 +182,8 @@ class ModelTrainer:
 
         network_model = NetworkModel(preprocessor=preprocessor, model=best_model)
         save_object(self.model_trainer_config.trained_model_file_path, obj=network_model)
+
+        save_object("final_models/model.pkl",best_model)
 
         # Return artifacts
         model_trainer_artifacts = ModelTrainerArtifact(
